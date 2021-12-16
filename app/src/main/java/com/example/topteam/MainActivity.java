@@ -23,5 +23,19 @@ public class MainActivity extends AppCompatActivity {
         ListView listTeams = findViewById(R.id.topTeamList);
         // получаем ресурс
         String[] listTeamResource = getResources().getStringArray(R.array.listTeam);
+        // создаем адаптер
+        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listTeamResource);
+        listTeams.setAdapter(adapter);
+        listTeams.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id)
+            {
+                // по позиции получаем выбранный элемент
+                String selectedItem = listTeamResource[position];
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("choiceTeam", selectedItem);
+                startActivity(intent);
+            }
+        });
     }
 }

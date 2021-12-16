@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dividerHeight">5dp</dimen>
+    <dimen name="size_x">0dp</dimen>
+    <dimen name="size_y">0dp</dimen>
+    <dimen name="Horizontal_bias">0.0</dimen>
+    <dimen name="Vertical_bias">0.0</dimen>
+</resources>

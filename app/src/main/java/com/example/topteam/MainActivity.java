@@ -19,5 +19,9 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        // получаем элемент TextView
+        ListView listTeams = findViewById(R.id.topTeamList);
+        // получаем ресурс
+        String[] listTeamResource = getResources().getStringArray(R.array.listTeam);
     }
 }

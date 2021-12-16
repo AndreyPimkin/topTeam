@@ -13,13 +13,16 @@ import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        // получаем элемент TextView
+        /*получаем элемент TextView
+        TextView selection = findViewById(R.id.view); */
         ListView listTeams = findViewById(R.id.topTeamList);
         // получаем ресурс
         String[] listTeamResource = getResources().getStringArray(R.array.listTeam);
@@ -32,10 +35,13 @@ public class MainActivity extends AppCompatActivity {
             {
                 // по позиции получаем выбранный элемент
                 String selectedItem = listTeamResource[position];
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("choiceTeam", selectedItem);
-                startActivity(intent);
+                Intent intentinfo = new Intent(MainActivity.this, SecondActivity.class);
+                intentinfo.putExtra("choiceTeam", selectedItem);
+                startActivity(intentinfo);
             }
         });
     }
+
+
+
 }
